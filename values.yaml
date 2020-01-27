@@ -427,6 +427,10 @@ concourse:
       ##
       pathPrefix: /concourse
 
+      ## List of custom Vault path templates for credential lookup.
+      ##
+      lookupTemplates:
+
       ## Path under which to lookup shared credentials.
       ##
       sharedPath:

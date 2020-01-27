@@ -449,6 +449,10 @@ spec:
             - name: CONCOURSE_VAULT_NAMESPACE
               value: {{ .Values.concourse.web.vault.namespace | quote }}
             {{- end }}
+            {{- if.Values.concourse.web.vault.lookupTemplates }}
+            - name: CONCOURSE_VAULT_LOOKUP_TEMPLATES
+              value: {{ join "," .Values.concourse.web.vault.lookupTemplates | quote }
+            {{- end }}
             {{- if.Values.concourse.web.vault.sharedPath }}
             - name: CONCOURSE_VAULT_SHARED_PATH
               value: {{ .Values.concourse.web.vault.sharedPath | quote }}
